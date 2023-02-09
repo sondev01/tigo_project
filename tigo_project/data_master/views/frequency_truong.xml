@@ -12,6 +12,7 @@
         </record>
         <record id="action_frequency_models" model="ir.actions.act_window">
             <field name="name">Tuần suất</field>
+<!--            <field name="name">Tuần suất</field>-->
             <field name="res_model">frequency.models</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
