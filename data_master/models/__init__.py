@@ -5,3 +5,4 @@ from . import applied_subjects
 from . import file
 from . import school
 from . import object
+from . import education_truong

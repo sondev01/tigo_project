@@ -32,6 +32,7 @@
         'views/file.xml',
         'views/object.xml',
         'views/school.xml',
+        'views/education_truong.xml',
         'security/ir.model.access.csv',
     ],
 }
