@@ -16,6 +16,13 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
-        <menuitem name="Khối áp dụng" id="menu_applied_learning" action="applied_learning_form" sequence="1"/>
+        <menuitem name="Data Master"
+                  id="data_master_menu"
+                  sequence="1"/>
+        <menuitem name="Khối áp dụng"
+                  id="menu_applied_learning"
+                  action="applied_learning_form"
+                  parent="data_master.data_master_menu"
+                  sequence="1"/>
     </data>
 </odoo>

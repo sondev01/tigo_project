@@ -16,6 +16,10 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
-        <menuitem name="Phòng giáo dục" id="menu_education_models" action="action_education_models" sequence="1"/>
+        <menuitem name="Phòng giáo dục"
+                  id="menu_education_models"
+                  action="action_education_models"
+                  parent="data_master.data_master_menu"
+                  sequence="7"/>
     </data>
 </odoo>

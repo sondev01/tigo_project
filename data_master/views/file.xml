@@ -19,6 +19,7 @@
                 name="Định dạng tệp"
                 id="menu_file_models"
                 action="action_file_models"
-                sequence="1"/>
+                parent="data_master.data_master_menu"
+                sequence="6"/>
     </data>
 </odoo>
