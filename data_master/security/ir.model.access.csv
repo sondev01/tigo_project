@@ -6,5 +6,7 @@ access_education_models,education_models,model_education_models,base.group_user,
 access_file_models,file_models,model_file_models,base.group_user,1,1,1,1
 access_object_models,object_models,model_object_models,base.group_user,1,1,1,1
 access_school_models,school_models,model_school_models,base.group_user,1,1,1,1
+access_school_level,school_level,model_school_level,base.group_user,1,1,1,1
+
 
 
