@@ -27,6 +27,11 @@
     # always loaded
     'data': [
         'views/frequency_truong.xml',
+        'views/applied_learning.xml',
+        'views/applied_subjects.xml',
+        'views/file.xml',
+        'views/object.xml',
+        'views/school.xml',
         'security/ir.model.access.csv',
     ],
 }

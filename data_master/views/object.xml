@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="object_models_tree_views">
+            <field name="name">Đối tượng</field>
+            <field name="model">object.models</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_object_models" model="ir.actions.act_window">
+            <field name="name">Đối tượng</field>
+            <field name="res_model">object.models</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem
+                name="Đối tượng"
+                id="menu_object_models"
+                action="action_object_models"
+                sequence="1"/>
+    </data>
+</odoo>
