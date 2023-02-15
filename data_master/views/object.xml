@@ -20,6 +20,7 @@
                 name="Đối tượng"
                 id="menu_object_models"
                 action="action_object_models"
-                sequence="1"/>
+                parent="data_master.data_master_menu"
+                sequence="4"/>
     </data>
 </odoo>

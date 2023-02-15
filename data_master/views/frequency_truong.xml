@@ -17,6 +17,10 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
-        <menuitem name="Tần suất" id="menu_frequency_models" action="action_frequency_models" sequence="1"/>
+        <menuitem name="Tần suất"
+                  id="menu_frequency_models"
+                  action="action_frequency_models"
+                  parent="data_master.data_master_menu"
+                  sequence="5"/>
     </data>
 </odoo>
