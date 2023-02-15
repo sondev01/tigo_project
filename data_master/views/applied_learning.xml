@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="applied_learning_tree">
+            <field name="name">Khối áp dụng</field>
+            <field name="model">applied.learning</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="code"/>
+                    <field name="name_blocks"/>
+                </tree>
+            </field>
+        </record>
+        <record id="applied_learning_form" model="ir.actions.act_window">
+            <field name="name">Khối áp dụng</field>
+            <field name="res_model">applied.learning</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Khối áp dụng" id="menu_applied_learning" action="applied_learning_form" sequence="1"/>
+    </data>
+</odoo>

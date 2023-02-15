@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="applied_subjects_tree">
+            <field name="name">Môn áp dụng</field>
+            <field name="model">applied.subjects</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="code"/>
+                    <field name="name_subjects"/>
+                </tree>
+            </field>
+        </record>
+        <record id="applied_subjects_form" model="ir.actions.act_window">
+            <field name="name">Môn áp dụng</field>
+            <field name="res_model">applied.subjects</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Môn áp dụng" id="menu_applied_subjects" action="applied_subjects_form" sequence="1"/>
+    </data>
+</odoo>

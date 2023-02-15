@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="school_models_tree_views">
+            <field name="name">Trường học</field>
+            <field name="model">school.models</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_school_models" model="ir.actions.act_window">
+            <field name="name">Trường hoc</field>
+            <field name="res_model">school.models</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem
+                name="Trường học"
+                id="menu_school_models"
+                action="action_school_models"
+                sequence="1"/>
+    </data>
+</odoo>
