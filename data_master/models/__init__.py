@@ -6,3 +6,4 @@ from . import file
 from . import school
 from . import object
 from . import education_truong
+from . import school_level

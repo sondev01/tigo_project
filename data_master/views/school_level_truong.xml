@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="school_level_tree_views">
+            <field name="name">Cấp học</field>
+            <field name="model">school.level</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="school_level_code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_school_level" model="ir.actions.act_window">
+            <field name="name">Cấp Học</field>
+            <field name="res_model">school.level</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Cấp học" id="menu_school_level" action="action_school_level" sequence="1"/>
+    </data>
+</odoo>
