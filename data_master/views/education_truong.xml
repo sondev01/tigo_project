@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="education_models_tree_views">
+            <field name="name">Phòng giáo dục</field>
+            <field name="model">education.models</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="education_code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_education_models" model="ir.actions.act_window">
+            <field name="name">Phòng giáo dục</field>
+            <field name="res_model">education.models</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Phòng giáo dục" id="menu_education_models" action="action_education_models" sequence="1"/>
+    </data>
+</odoo>
