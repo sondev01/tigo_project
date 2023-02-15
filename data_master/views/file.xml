@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="file_models_tree_views">
+            <field name="name">Định dạng tệp</field>
+            <field name="model">file.models</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_file_models" model="ir.actions.act_window">
+            <field name="name">Định dạng tệp</field>
+            <field name="res_model">file.models</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem
+                name="Định dạng tệp"
+                id="menu_file_models"
+                action="action_file_models"
+                sequence="1"/>
+    </data>
+</odoo>
