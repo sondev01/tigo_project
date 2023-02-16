@@ -1,12 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_frequency_models,frequency_models,model_frequency_models,base.group_user,1,1,1,1
-access_applied_subjects,applied_subjects,model_applied_subjects,base.group_user,1,1,1,1
-access_applied_learning,applied_learning,model_applied_learning,base.group_user,1,1,1,1
-access_education_models,education_models,model_education_models,base.group_user,1,1,1,1
-access_file_models,file_models,model_file_models,base.group_user,1,1,1,1
-access_object_models,object_models,model_object_models,base.group_user,1,1,1,1
-access_school_models,school_models,model_school_models,base.group_user,1,1,1,1
-access_school_level,school_level,model_school_level,base.group_user,1,1,1,1
+access_list_sample,list_sample,model_list_sample,base.group_user,1,1,1,1
+
 
 
 

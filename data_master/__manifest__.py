@@ -34,6 +34,7 @@
         'views/school.xml',
         'views/education_truong.xml',
         'views/school_level_truong.xml',
+        'views/applicable_type.xml',
         'security/ir.model.access.csv',
     ],
 }

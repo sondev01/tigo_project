@@ -5,5 +5,5 @@ class ObjectModels(models.Model):
     _name = 'object.models'
     _description = 'Đối tượng'
 
-    name = fields.Char('Tên đối tượng')
-    code = fields.Integer('Mã đối tượng')
+    name = fields.Char('Tên đối tượng', required=True)
+    code = fields.Integer('Mã đối tượng', required=True)

@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="list_sample_tree">
+            <field name="name">Danh mục mẫu sổ</field>
+            <field name="model">list.sample</field>
+            <field name="arch" type="xml">
+                <tree string="Danh mục mẫu sổ">
+                    <field name="name"/>
+                    <field name="applicable_type_id"/>
+                    <field name="frequency_id"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="choose_signer"/>
+                    <field name="outsider_signer"/>
+                    <field name="check_done"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="list_sample_form_view">
+            <field name="name">Danh mục mẫu sổ</field>
+            <field name="model">list.sample</field>
+            <field name="arch" type="xml">
+                <form string="Danh mục mẫu sổ">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="applicable_type_id"/>
+                                <field name="frequency_id"/>
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                                <field name="choose_signer"/>
+                                <field name="outsider_signer"/>
+                                <field name="check_done"/>
+                            </group>
+                            <group>
+                                <field name="applied_learning_ids" widget="many2many_tags"/>
+                                <field name="applied_subjects_ids" widget="many2many_tags"/>
+                                <field name="school_level_ids" widget="many2many_tags"/>
+                                <field name="education_ids" widget="many2many_tags"/>
+                                <field name="school_ids" widget="many2many_tags"/>
+                                <field name="file_ids" widget="many2many_tags"/>
+                                <field name="object_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="list_sample_view" model="ir.actions.act_window">
+            <field name="name">Danh mục mẫu sổ</field>
+            <field name="res_model">list.sample</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Danh mục mẫu sổ"
+                  id="menu_list_sample"
+                  action="list_sample_view"
+                  sequence="1"/>
+    </data>
+</odoo>
