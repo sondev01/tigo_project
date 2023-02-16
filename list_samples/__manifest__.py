@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Data Master",
+    'name': "Danh mục mẫu sổ",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "THG",
+    'author': "TIGO",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -26,15 +26,7 @@
 
     # always loaded
     'data': [
-        'views/frequency_truong.xml',
-        'views/applied_learning.xml',
-        'views/applied_subjects.xml',
-        'views/file.xml',
-        'views/object.xml',
-        'views/school.xml',
-        'views/education_truong.xml',
-        'views/school_level_truong.xml',
-        'views/applicable_type.xml',
+        'views/list_sample.xml',
         'security/ir.model.access.csv',
     ],
 }

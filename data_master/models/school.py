@@ -5,5 +5,5 @@ class School(models.Model):
     _name = 'school.models'
     _description = 'Trường học'
 
-    name = fields.Char('Tên trường')
-    code = fields.Integer('Mã trường')
+    name = fields.Char('Tên trường', required=True)
+    code = fields.Integer('Mã trường', required=True)

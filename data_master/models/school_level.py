@@ -7,5 +7,5 @@ class SchoolLevel(models.Model):
     _name = 'school.level'
     _description = 'Cấp học'
 
-    name = fields.Char('Tên cấp học')
-    school_level_code = fields.Char('Mã cấp học')
+    name = fields.Char('Tên cấp học', required=True)
+    school_level_code = fields.Char('Mã cấp học', required=True)
