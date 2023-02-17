@@ -7,6 +7,7 @@ access_file_models,file_models,model_file_models,base.group_user,1,1,1,1
 access_object_models,object_models,model_object_models,base.group_user,1,1,1,1
 access_school_models,school_models,model_school_models,base.group_user,1,1,1,1
 access_school_level,school_level,model_school_level,base.group_user,1,1,1,1
+access_applicable_type,applicable_type,model_applicable_type,base.group_user,1,1,1,1
 
 
 

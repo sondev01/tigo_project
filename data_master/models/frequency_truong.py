@@ -7,5 +7,11 @@ class FrequencyModels(models.Model):
     _name = 'frequency.models'
     _description = 'Tần suất'
 
-    name = fields.Char('Đơn vị')
-    numbers = fields.Integer('Số lần')
+    name = fields.Char('Đơn vị', required=True)
+    numbers = fields.Integer('Số lần', required=True)
+
+    def name_get(self):
+        res = []
+        for record in self:
+            res.append((record.id, "%s/%s" % (record.numbers, record.name)))
+        return res
