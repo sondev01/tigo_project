@@ -9,9 +9,10 @@ class ListSamples(models.Model):
 
     state = fields.Selection([
         ('draft', 'Nháp'),
-        ('doing', 'Đang thực hiện'),
-        ('Done', 'Hoàn thành'),
-        ('cancel', 'Hủy')], string='Trạng thái', default='draft')
+        ('use', 'Sử dụng'),
+        ('block', 'Khóa'),
+        ('all', 'Tất cả'),
+        ('cancel', 'Từ chối')], string='Trạng thái', default='draft')
     name = fields.Char(string="Danh mục mẫu sổ", required=True)
     applicable_type_id = fields.Many2one('applicable.type', string='Loại áp dụng', required=True)
     frequency_id = fields.Many2one('frequency.models', string="Tần suất")
@@ -48,4 +49,8 @@ class ListSamples(models.Model):
                                   'list_sample_object_ref',
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)
+
+
+
+
 
