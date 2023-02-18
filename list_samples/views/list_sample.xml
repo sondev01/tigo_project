@@ -36,16 +36,20 @@
                                 <field name="outsider_signer"/>
                                 <field name="check_done"/>
                             </group>
-                            <group>
+                        </group>
+                        <notebook>
+                            <page string="2.Phạm vi sử dụng">
                                 <field name="applied_learning_ids" widget="many2many_tags"/>
                                 <field name="applied_subjects_ids" widget="many2many_tags"/>
                                 <field name="school_level_ids" widget="many2many_tags"/>
                                 <field name="education_ids" widget="many2many_tags"/>
+                            </page>
+                            <page string="3.Định dạng tệp nộp">
                                 <field name="school_ids" widget="many2many_tags"/>
                                 <field name="file_ids" widget="many2many_tags"/>
                                 <field name="object_ids" widget="many2many_tags"/>
-                            </group>
-                        </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
