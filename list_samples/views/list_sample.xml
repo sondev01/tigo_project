@@ -39,15 +39,30 @@
                                 </group>
                             </page>
                             <page string="2.Phạm vi sử dụng">
-                                <field name="applied_learning_ids" widget="many2many_tags"/>
-                                <field name="applied_subjects_ids" widget="many2many_tags"/>
-                                <field name="school_level_ids" widget="many2many_tags"/>
-                                <field name="education_ids" widget="many2many_tags"/>
+                                <group>
+                                    <field name="applied_learning_ids" widget="many2many_tags"/>
+                                    <field name="applied_subjects_ids" widget="many2many_tags"/>
+                                    <field name="school_level_ids" widget="many2many_tags"/>
+                                    <field name="education_ids" widget="many2many_tags"/>
+                                </group>
                             </page>
-                            <page string="3.Định dạng tệp nộp" attrs="{'invisible': [('choose_signer','=',False)]}">
-                                <field name="school_ids" widget="many2many_tags"/>
-                                <field name="file_ids" widget="many2many_tags"/>
-                                <field name="object_ids" widget="many2many_tags"/>
+                            <page string="3.Định dạng tệp nộp">
+                                <group>
+                                    <field name="school_ids" widget="many2many_tags"/>
+                                    <field name="file_ids" widget="many2many_tags"/>
+                                    <field name="object_ids" widget="many2many_tags"/>
+                                </group>
+                            </page>
+                            <page string="5.Đối tượng kí duyệt sổ" attrs="{'invisible': [('choose_signer','=',False)]}">
+                                <field name="sign_book_ids">
+                                    <tree string="Đối tượng kí duyệt sổ" editable="bottom">
+                                        <field name="order_of_signing"/>
+                                        <field name="model_name_id"/>
+                                        <field name="object_type_id"/>
+                                        <field name="signature"/>
+                                        <field name="promulgate"/>
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>

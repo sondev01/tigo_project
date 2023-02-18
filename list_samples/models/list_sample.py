@@ -49,8 +49,4 @@ class ListSamples(models.Model):
                                   'list_sample_object_ref',
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)
-
-
-
-
-
+    sign_book_ids = fields.One2many('sign.book', 'list_sample_id', string='đối tượng kí duyệt sổ')

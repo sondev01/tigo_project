@@ -27,6 +27,7 @@
     # always loaded
     'data': [
         'views/list_sample.xml',
+        'views/sign_book.xml',
         'security/ir.model.access.csv',
     ],
 }

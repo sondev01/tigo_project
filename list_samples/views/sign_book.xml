@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sign_book_tree">
+            <field name="name">Đối tượng kí duyệt sổ</field>
+            <field name="model">sign.book</field>
+            <field name="arch" type="xml">
+                <tree string="Đối tượng kí duyệt sổ">
+                    <field name="model_name_id"/>
+                    <field name="order_of_signing"/>
+                    <field name="object_type_id"/>
+                    <field name="signature"/>
+                    <field name="promulgate"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sign_book_list" model="ir.ui.view">
+            <field name="name">sign.book</field>
+            <field name="model">sign.book</field>
+            <field name="arch" type="xml">
+                <tree string="Đối tượng kí duyệt sổ">
+                    <field name="model_name_id"/>
+                    <field name="order_of_signing"/>
+                    <field name="object_type_id"/>
+                    <field name="signature"/>
+                    <field name="promulgate"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
