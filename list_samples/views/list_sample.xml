@@ -25,26 +25,26 @@
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
-                        <group>
-                            <group>
-                                <field name="name"/>
-                                <field name="applicable_type_id"/>
-                                <field name="frequency_id"/>
-                                <field name="from_date"/>
-                                <field name="to_date"/>
-                                <field name="choose_signer"/>
-                                <field name="outsider_signer"/>
-                                <field name="check_done"/>
-                            </group>
-                        </group>
                         <notebook>
+                            <page string="1.Khai báo thuộc tính">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="applicable_type_id"/>
+                                    <field name="frequency_id"/>
+                                    <field name="from_date"/>
+                                    <field name="to_date"/>
+                                    <field name="choose_signer"/>
+                                    <field name="outsider_signer"/>
+                                    <field name="check_done"/>
+                                </group>
+                            </page>
                             <page string="2.Phạm vi sử dụng">
                                 <field name="applied_learning_ids" widget="many2many_tags"/>
                                 <field name="applied_subjects_ids" widget="many2many_tags"/>
                                 <field name="school_level_ids" widget="many2many_tags"/>
                                 <field name="education_ids" widget="many2many_tags"/>
                             </page>
-                            <page string="3.Định dạng tệp nộp">
+                            <page string="3.Định dạng tệp nộp" attrs="{'invisible': [('choose_signer','=',False)]}">
                                 <field name="school_ids" widget="many2many_tags"/>
                                 <field name="file_ids" widget="many2many_tags"/>
                                 <field name="object_ids" widget="many2many_tags"/>
