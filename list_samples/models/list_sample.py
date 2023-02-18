@@ -49,8 +49,3 @@ class ListSamples(models.Model):
                                   'list_sample_object_ref',
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)
-
-
-
-
-
