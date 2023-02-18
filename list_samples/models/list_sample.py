@@ -21,10 +21,11 @@ class ListSamples(models.Model):
     choose_signer = fields.Boolean(string="Cho chọn người ký duyệt áp dụng")
     outsider_signer = fields.Boolean(string="Cho phép đơn vị ngoài nộp")
     check_done = fields.Boolean(string='Xác nhận hoàn thành')
-    applied_learning_ids = fields.Many2many('applied.learning',
-                                            'list_sample_applied_learning_ref',
-                                            'list_sample_id',
-                                            'applied_learning_id', string="Khối học áp dụng", required=True)
+    applied_learning_ids = fields.Many2many('applied.learning',#bảng liên kết
+                                            'list_sample_applied_learning_ref',#tên bảng trung gian
+                                            'list_sample_id',#tên cột 1
+                                            'applied_learning_id',#tên cột 2
+                                            string="Khối học áp dụng", required=True)
     applied_subjects_ids = fields.Many2many('applied.subjects',
                                             'list_sample_applied_subjects_ref',
                                             'list_sample_id',
