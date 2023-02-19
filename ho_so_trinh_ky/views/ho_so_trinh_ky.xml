@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hoso_trinhky_tree">
+            <field name="name">Hồ sơ trình ký</field>
+            <field name="model">hoso.trinhky</field>
+            <field name="arch" type="xml">
+                <tree string="Hồ sơ trình ký">
+                    <field name="ten_hoso"/>
+                    <field name="trang_thai_so"/>
+                    <field name="file"/>
+                    <field name="khoihoc_apdung"/>
+                    <field name="monhoc_apdung"/>
+                    <field name="ngay_nop"/>
+                    <field name="nguoi_nop"/>
+                    <field name="duong_dan"/>
+                    <field name="nhan_xet"/>
+                    <field name="mau_so"/>
+                    <field name="da_ky"/>
+                    <field name="da_ky_dien_tu"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hoso_trinhky_view" model="ir.actions.act_window">
+            <field name="name">Hồ sơ trình ký</field>
+            <field name="res_model">hoso.trinhky</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Hồ sơ trình ký"
+                  id="menu_hoso_trinhky"
+                  action="hoso_trinhky_view"
+                  sequence="1"/>
+    </data>
+</odoo>
