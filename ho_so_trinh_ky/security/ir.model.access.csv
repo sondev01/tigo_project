@@ -1,5 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hoso_trinhky,hoso_trinhky,model_hoso_trinhky,base.group_user,1,1,1,1
+access_trinhky_chitiet,trinhky_chitiet,model_trinhky_chitiet,base.group_user,1,1,1,1
+
 
 
 

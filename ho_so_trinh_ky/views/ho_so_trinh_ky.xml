@@ -8,13 +8,13 @@
                     <field name="ten_hoso"/>
                     <field name="trang_thai_so"/>
                     <field name="file"/>
-                    <field name="khoihoc_apdung"/>
-                    <field name="monhoc_apdung"/>
+                    <field name="khoihoc_apdung_id"/>
+                    <field name="monhoc_apdung_id"/>
                     <field name="ngay_nop"/>
                     <field name="nguoi_nop"/>
                     <field name="duong_dan"/>
                     <field name="nhan_xet"/>
-                    <field name="mau_so"/>
+                    <field name="mau_so_id"/>
                     <field name="da_ky"/>
                     <field name="da_ky_dien_tu"/>
                 </tree>
@@ -26,8 +26,12 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
+         <menuitem name="Hồ sơ trình ký"
+                  id="hoso_trinhky_menu"
+                  sequence="1"/>
         <menuitem name="Hồ sơ trình ký"
                   id="menu_hoso_trinhky"
+                  parent="ho_so_trinh_ky.hoso_trinhky_menu"
                   action="hoso_trinhky_view"
                   sequence="1"/>
     </data>

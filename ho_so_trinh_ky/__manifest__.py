@@ -27,6 +27,7 @@
     # always loaded
     'data': [
         'views/ho_so_trinh_ky.xml',
+        'views/trinhky_chitiet.xml',
         'security/ir.model.access.csv',
     ],
 }

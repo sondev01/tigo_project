@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="trinhky_chitiet_tree">
+            <field name="name">Hồ sơ trình ký chi tiết</field>
+            <field name="model">trinhky.chitiet</field>
+            <field name="arch" type="xml">
+                <tree string="Hồ sơ trình ký chi tiết">
+                    <field name="ho_ten"/>
+                    <field name="thu_tu_ky"/>
+                    <field name="loai_doi_tuong_ky_ids"/>
+                    <field name="ky_dien_tu"/>
+                    <field name="ban_hanh"/>
+                    <field name="ten_mau_so_id"/>
+                    <field name="ho_so_trinh_ky_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="trinhky_chitiet_view" model="ir.actions.act_window">
+            <field name="name">Hồ sơ trình ký chi tiết</field>
+            <field name="res_model">trinhky.chitiet</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Sổ trình ký"
+                  id="menu_trinhky_chitiet"
+                  action="trinhky_chitiet_view"
+                  parent="ho_so_trinh_ky.hoso_trinhky_menu"
+                  sequence="2"/>
+    </data>
+</odoo>
