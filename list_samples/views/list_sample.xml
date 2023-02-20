@@ -5,6 +5,7 @@
             <field name="model">list.sample</field>
             <field name="arch" type="xml">
                 <tree string="Danh mục mẫu sổ">
+                    <button name="action_in_progress" string="Xem" type="object" class="btn-primary"/>
                     <field name="name"/>
                     <field name="applicable_type_id"/>
                     <field name="frequency_id"/>
@@ -24,6 +25,7 @@
                     <header>
                         <field name="state" widget="statusbar"/>
                     </header>
+                    <link rel="stylesheet" href="/list_samples/static/src/custom.css"/>
                     <sheet>
                         <notebook>
                             <page string="1.Khai báo thuộc tính">

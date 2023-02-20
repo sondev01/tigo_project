@@ -50,7 +50,10 @@ class ListSamples(models.Model):
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)
 
+    def _get_action(self, action_xmlid):
+        action = self.env["ir.actions.actions"]._for_xml_id(action_xmlid)
+        return action
 
-
-
-
+    def action_in_progress(self):
+        if self._name == 'list.sample':
+            return self._get_action('data_master.applicable_type_form')
