@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mauso_trinhky_tree">
+            <field name="name">Mẫu sổ trình ký</field>
+            <field name="model">mauso.trinhky</field>
+            <field name="arch" type="xml">
+                <tree string="Mẫu sổ trình ký">
+                    <button name="see_more" string="Xem thêm" type="object" class="btn-primary"/>
+                    <field name="sl_chua_ky"/>
+                    <field name="sl_dang_ky"/>
+                    <field name="sl_duyet_so"/>
+                    <field name="sl_tu_choi"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="loai_ap_dung_id"/>
+                    <field name="tan_suat_id"/>
+                    <field name="cap_hoc_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mauso_trinhky_form">
+            <field name="name">Mẫu sổ trình ký</field>
+            <field name="model">mauso.trinhky</field>
+            <field name="arch" type="xml">
+                <form string="Mẫu sổ trình ký">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sl_chua_ky"/>
+                                <field name="sl_dang_ky"/>
+                                <field name="sl_duyet_so"/>
+                                <field name="sl_tu_choi"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="loai_ap_dung_id"/>
+                                <field name="tan_suat_id"/>
+                                <field name="cap_hoc_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="mauso_trinhky_view" model="ir.actions.act_window">
+            <field name="name">Mẫu sổ trình ký</field>
+            <field name="res_model">mauso.trinhky</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <menuitem name="Mẫu sổ trình ký"
+                  id="menu_mauso_trinhky"
+                  action="mauso_trinhky_view"
+                  parent="ho_so_trinh_ky.hoso_trinhky_menu"
+                  sequence="3"/>
+    </data>
+</odoo>
