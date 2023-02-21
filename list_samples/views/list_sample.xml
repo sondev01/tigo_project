@@ -78,6 +78,7 @@
         <menuitem name="Danh mục mẫu sổ"
                   id="menu_list_sample"
                   action="list_sample_view"
+                  web_icon="list_samples,static/description/mau_sach.png"
                   sequence="1"/>
     </data>
 </odoo>
