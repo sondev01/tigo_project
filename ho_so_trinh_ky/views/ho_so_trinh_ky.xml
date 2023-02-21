@@ -6,7 +6,6 @@
             <field name="arch" type="xml">
                 <tree string="Hồ sơ trình ký">
                     <field name="ten_hoso"/>
-                    <field name="trang_thai_so"/>
                     <field name="file"/>
                     <field name="khoihoc_apdung_id"/>
                     <field name="monhoc_apdung_id"/>
@@ -17,6 +16,10 @@
                     <field name="mau_so_id"/>
                     <field name="da_ky"/>
                     <field name="da_ky_dien_tu"/>
+                    <field name="trang_thai_so" optional="show" widget="badge"
+                           decoration-success="trang_thai_so == 'use'"
+                           decoration-info="trang_thai_so not in ('use', 'cancel')"
+                           decoration-danger="trang_thai_so == 'cancel'"/>
                 </tree>
             </field>
         </record>
@@ -27,17 +30,21 @@
                 <form string="Hồ sơ trình ký">
                     <header>
                         <field name="trang_thai_so" widget="statusbar"/>
-                        <button string="Sử dụng" class="oe_highlight" type="object" name="use" data-hotkey="q"/>
-                        <button string="Khóa" class="oe_highlight" type="object" name="block" data-hotkey="q"/>
-                        <button string="Tất cả" class="oe_highlight" type="object" name="all" data-hotkey="q"/>
-                        <button string="Hủy" class="oe_highlight" type="object" name="cancel" data-hotkey="q"/>
+                        <button string="Sử dụng" class="oe_highlight" type="object" name="use"
+                                attrs="{'invisible': [('trang_thai_so','not in',['draft','block'])]}"/>
+                        <button string="Khóa" class="oe_highlight" type="object" name="block"
+                                attrs="{'invisible': [('trang_thai_so','not in',['draft','use','all'])]}"/>
+                        <button string="Tất cả" class="oe_highlight" type="object" name="all"
+                                attrs="{'invisible': [('trang_thai_so','in',['cancel','all'])]}"/>
+                        <button string="Hủy" class="oe_highlight" type="object" name="cancel"
+                                attrs="{'invisible': [('trang_thai_so','=','cancel')]}"/>
                     </header>
                     <sheet>
                         <group>
                             <group>
                                 <field name="ten_hoso"/>
                                 <field name="mau_so_trinhky_id"/>
-                                <field name="file"/>
+                                <field name="file" widget="binary"/>
                                 <field name="khoihoc_apdung_id"/>
                                 <field name="monhoc_apdung_id"/>
                                 <field name="ngay_nop"/>

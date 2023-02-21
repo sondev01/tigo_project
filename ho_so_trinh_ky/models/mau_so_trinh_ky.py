@@ -42,3 +42,19 @@ class MauSoTrinhKy(models.Model):
                 [('trang_thai_so', '=', 'block'), ('mau_so_trinhky_id', '=', r.id)])
             r.sl_tu_choi = self.env['hoso.trinhky'].search_count(
                 [('trang_thai_so', '=', 'cancel'), ('mau_so_trinhky_id', '=', r.id)])
+
+    def use(self):
+        for r in self:
+            r.state = 'use'
+
+    def block(self):
+        for r in self:
+            r.state = 'block'
+
+    def all(self):
+        for r in self:
+            r.state = 'all'
+
+    def cancel(self):
+        for r in self:
+            r.state = 'cancel'

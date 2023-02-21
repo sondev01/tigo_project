@@ -11,10 +11,11 @@
                     <field name="sl_duyet_so"/>
                     <field name="sl_tu_choi"/>
                     <field name="name"/>
-                    <field name="state"/>
                     <field name="loai_ap_dung_id"/>
                     <field name="tan_suat_id"/>
                     <field name="cap_hoc_id"/>
+                    <field name="state" optional="show" widget="badge" decoration-danger="state == 'cancel'"
+                           decoration-success="state == 'use'" decoration-info="state not in ('use', 'cancel')"/>
                 </tree>
             </field>
         </record>
@@ -25,6 +26,14 @@
                 <form string="Mẫu sổ trình ký">
                     <header>
                         <field name="state" widget="statusbar"/>
+                        <button string="Sử dụng" class="oe_highlight" type="object" name="use"
+                                attrs="{'invisible': [('state','not in',['draft','block'])]}"/>
+                        <button string="Khóa" class="oe_highlight" type="object" name="block"
+                                attrs="{'invisible': [('state','not in',['draft','use','all'])]}"/>
+                        <button string="Tất cả" class="oe_highlight" type="object" name="all"
+                                attrs="{'invisible': [('state','in',['cancel','all'])]}"/>
+                        <button string="Hủy" class="oe_highlight" type="object" name="cancel"
+                                attrs="{'invisible': [('state','=','cancel')]}"/>
                     </header>
                     <sheet>
                         <group>
