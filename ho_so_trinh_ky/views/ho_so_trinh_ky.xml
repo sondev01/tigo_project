@@ -20,13 +20,48 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="hoso_trinhky_form">
+            <field name="name">Hồ sơ trình ký</field>
+            <field name="model">hoso.trinhky</field>
+            <field name="arch" type="xml">
+                <form string="Hồ sơ trình ký">
+                    <header>
+                        <field name="trang_thai_so" widget="statusbar"/>
+                        <button string="Sử dụng" class="oe_highlight" type="object" name="use" data-hotkey="q"/>
+                        <button string="Khóa" class="oe_highlight" type="object" name="block" data-hotkey="q"/>
+                        <button string="Tất cả" class="oe_highlight" type="object" name="all" data-hotkey="q"/>
+                        <button string="Hủy" class="oe_highlight" type="object" name="cancel" data-hotkey="q"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ten_hoso"/>
+                                <field name="mau_so_trinhky_id"/>
+                                <field name="file"/>
+                                <field name="khoihoc_apdung_id"/>
+                                <field name="monhoc_apdung_id"/>
+                                <field name="ngay_nop"/>
+                            </group>
+                            <group>
+                                <field name="nguoi_nop"/>
+                                <field name="duong_dan"/>
+                                <field name="nhan_xet"/>
+                                <field name="mau_so_id"/>
+                                <field name="da_ky"/>
+                                <field name="da_ky_dien_tu"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
         <record id="hoso_trinhky_view" model="ir.actions.act_window">
             <field name="name">Hồ sơ trình ký</field>
             <field name="res_model">hoso.trinhky</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
-         <menuitem name="Hồ sơ trình ký"
+        <menuitem name="Hồ sơ trình ký"
                   id="hoso_trinhky_menu"
                   sequence="1"/>
         <menuitem name="Hồ sơ trình ký"

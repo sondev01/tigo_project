@@ -6,6 +6,7 @@ from odoo import models, api, fields
 class HoSoTrinhKy(models.Model):
     _name = 'hoso.trinhky'
     _description = 'Hồ sơ trình ký'
+    _rec_name = 'ten_hoso'
 
     ten_hoso = fields.Char(string="Tên Hồ Sơ", required=True)
     # ky_nop_id = fields.Many2one('',string='Kỳ nộp')
@@ -25,3 +26,20 @@ class HoSoTrinhKy(models.Model):
     mau_so_id = fields.Many2one('list.sample', string="Mẫu sổ", required=True)
     da_ky = fields.Boolean(string='đã ký')
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
+    mau_so_trinhky_id = fields.Many2one('mauso.trinhky', string="Mẫu sổ trình ký", requred=True)
+
+    def use(self):
+        for r in self:
+            r.trang_thai_so = 'use'
+
+    def block(self):
+        for r in self:
+            r.trang_thai_so = 'block'
+
+    def all(self):
+        for r in self:
+            r.trang_thai_so = 'all'
+
+    def cancel(self):
+        for r in self:
+            r.trang_thai_so = 'cancel'

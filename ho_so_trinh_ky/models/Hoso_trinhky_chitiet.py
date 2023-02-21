@@ -6,6 +6,7 @@ from odoo import models, api, fields
 class HoSoTrinhKyChiTiet(models.Model):
     _name = 'trinhky.chitiet'
     _description = 'Hồ sơ trình ký chi tiết'
+    _rec_name = 'ho_ten'
 
     ho_ten = fields.Char(string="Họ và tên", required=True)
     thu_tu_ky = fields.Integer(string="Thứ tự ký", required=True)

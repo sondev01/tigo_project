@@ -28,6 +28,7 @@
     'data': [
         'views/ho_so_trinh_ky.xml',
         'views/trinhky_chitiet.xml',
+        'views/mau_so_trinh_ky.xml',
         'security/ir.model.access.csv',
     ],
 }
