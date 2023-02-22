@@ -29,7 +29,6 @@
     'data': [
         'views/list_sample.xml',
         'views/sign_book.xml',
-        'views/update_employee.xml',
         'security/ir.model.access.csv',
     ],
 }
