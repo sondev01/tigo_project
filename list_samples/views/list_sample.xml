@@ -37,20 +37,25 @@
                                     <field name="choose_signer"/>
                                     <field name="outsider_signer"/>
                                     <field name="check_done"/>
+                                    <field name="applied_learning_ids" widget="many2many_tags"/>
+                                    <field name="applied_subjects_ids" widget="many2many_tags"/>
                                 </group>
                             </page>
                             <page string="2.Phạm vi sử dụng">
                                 <group>
-                                    <field name="applied_learning_ids" widget="many2many_tags"/>
-                                    <field name="applied_subjects_ids" widget="many2many_tags"/>
                                     <field name="school_level_ids" widget="many2many_tags"/>
                                     <field name="education_ids" widget="many2many_tags"/>
+                                    <field name="school_ids" widget="many2many_tags"/>
                                 </group>
                             </page>
                             <page string="3.Định dạng tệp nộp">
                                 <group>
-                                    <field name="school_ids" widget="many2many_tags"/>
                                     <field name="file_ids" widget="many2many_tags"/>
+
+                                </group>
+                            </page>
+                            <page string="4.Đối tượng nộp">
+                                <group>
                                     <field name="object_ids" widget="many2many_tags"/>
                                 </group>
                             </page>
