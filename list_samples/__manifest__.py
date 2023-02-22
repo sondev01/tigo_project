@@ -21,13 +21,15 @@
 
     # any module necessary for this one to work correctly
     'depends': [
-        'base'
+        'base',
+        'hr'
     ],
 
     # always loaded
     'data': [
         'views/list_sample.xml',
         'views/sign_book.xml',
+        'views/update_employee.xml',
         'security/ir.model.access.csv',
     ],
 }
