@@ -7,7 +7,7 @@ class MauSoTrinhKy(models.Model):
     _name = 'mauso.trinhky'
     _description = 'Mẫu sổ trình ký'
 
-    name = fields.Char(string="Tên sổ", required=True)
+    name_id = fields.Many2one('list.sample',string="Tên sổ", required=True)
     state = fields.Selection([
         ('draft', 'Nháp'),
         ('use', 'Sử dụng'),
