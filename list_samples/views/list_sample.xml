@@ -28,7 +28,7 @@
                         <notebook>
                             <page string="1.Khai báo thuộc tính">
                                 <group>
-                                    <field name="check"/>
+                                    <field name="check" invisible="1"/>
                                     <field name="name"/>
                                     <field name="applicable_type_id"/>
                                     <field name="frequency_id"/>
