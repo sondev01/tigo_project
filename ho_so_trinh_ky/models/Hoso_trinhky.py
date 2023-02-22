@@ -23,7 +23,6 @@ class HoSoTrinhKy(models.Model):
     nguoi_nop = fields.Char(string='Người nộp', required=True)
     duong_dan = fields.Char(string='Đường dẫn')
     nhan_xet = fields.Char(string='Nhận xét')
-    mau_so_id = fields.Many2one('list.sample', string="Mẫu sổ", required=True)
     da_ky = fields.Boolean(string='đã ký')
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
     mau_so_trinhky_id = fields.Many2one('mauso.trinhky', string="Mẫu sổ trình ký", requred=True)
