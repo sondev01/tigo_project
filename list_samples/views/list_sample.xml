@@ -28,11 +28,12 @@
                         <notebook>
                             <page string="1.Khai báo thuộc tính">
                                 <group>
+                                    <field name="check"/>
                                     <field name="name"/>
                                     <field name="applicable_type_id"/>
                                     <field name="frequency_id"/>
-                                    <field name="from_date"/>
-                                    <field name="to_date"/>
+                                    <field name="from_date" attrs="{'invisible': [('check','!=',True)]}"/>
+                                    <field name="to_date" attrs="{'invisible': [('check','!=',True)]}"/>
                                     <field name="choose_signer"/>
                                     <field name="outsider_signer"/>
                                     <field name="check_done"/>
