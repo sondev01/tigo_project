@@ -17,8 +17,8 @@ class HoSoTrinhKy(models.Model):
         ('all', 'Tất cả'),
         ('cancel', 'Từ chối')], string='Trạng thái', default='draft')
     file = fields.Binary(string='File Nộp', required=True)
-    khoihoc_apdung_id = fields.Many2one('applied.learning', string='Khối học', reuired=True)
-    monhoc_apdung_id = fields.Many2one('applied.subjects', string='Môn học', required=True)
+    khoihoc_apdung_id = fields.Many2one('applied.learning', string='Khối học')
+    monhoc_apdung_id = fields.Many2one('applied.subjects', string='Môn học')
     ngay_nop = fields.Date(string='Ngày nộp', required=True)
     nguoi_nop = fields.Char(string='Người nộp', required=True)
     duong_dan = fields.Char(string='Đường dẫn')
