@@ -7,6 +7,8 @@
                 <tree editable="bottom">
                     <field name="code"/>
                     <field name="name"/>
+                    <field name="level_id"/>
+                    <field name="edu_dp_id"/>
                 </tree>
             </field>
         </record>
