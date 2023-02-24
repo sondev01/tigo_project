@@ -13,7 +13,6 @@
                     <field name="nguoi_nop"/>
                     <field name="duong_dan"/>
                     <field name="nhan_xet"/>
-                    <field name="mau_so_id"/>
                     <field name="da_ky"/>
                     <field name="da_ky_dien_tu"/>
                     <field name="trang_thai_so" optional="show" widget="badge"
@@ -53,7 +52,6 @@
                                 <field name="nguoi_nop"/>
                                 <field name="duong_dan"/>
                                 <field name="nhan_xet"/>
-                                <field name="mau_so_id"/>
                                 <field name="da_ky"/>
                                 <field name="da_ky_dien_tu"/>
                             </group>
@@ -70,6 +68,7 @@
         </record>
         <menuitem name="Hồ sơ trình ký"
                   id="hoso_trinhky_menu"
+                  web_icon="ho_so_trinh_ky,static/description/sach.png"
                   sequence="1"/>
         <menuitem name="Hồ sơ trình ký"
                   id="menu_hoso_trinhky"

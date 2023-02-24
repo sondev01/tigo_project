@@ -28,28 +28,34 @@
                         <notebook>
                             <page string="1.Khai báo thuộc tính">
                                 <group>
+                                    <field name="check" invisible="1"/>
                                     <field name="name"/>
                                     <field name="applicable_type_id"/>
                                     <field name="frequency_id"/>
-                                    <field name="from_date"/>
-                                    <field name="to_date"/>
+                                    <field name="from_date" attrs="{'invisible': [('check','!=',True)]}"/>
+                                    <field name="to_date" attrs="{'invisible': [('check','!=',True)]}"/>
                                     <field name="choose_signer"/>
                                     <field name="outsider_signer"/>
                                     <field name="check_done"/>
+                                    <field name="applied_learning_ids" widget="many2many_tags"/>
+                                    <field name="applied_subjects_ids" widget="many2many_tags"/>
                                 </group>
                             </page>
                             <page string="2.Phạm vi sử dụng">
                                 <group>
-                                    <field name="applied_learning_ids" widget="many2many_tags"/>
-                                    <field name="applied_subjects_ids" widget="many2many_tags"/>
                                     <field name="school_level_ids" widget="many2many_tags"/>
                                     <field name="education_ids" widget="many2many_tags"/>
+                                    <field name="school_ids" widget="many2many_tags"/>
                                 </group>
                             </page>
                             <page string="3.Định dạng tệp nộp">
                                 <group>
-                                    <field name="school_ids" widget="many2many_tags"/>
                                     <field name="file_ids" widget="many2many_tags"/>
+
+                                </group>
+                            </page>
+                            <page string="4.Đối tượng nộp">
+                                <group>
                                     <field name="object_ids" widget="many2many_tags"/>
                                 </group>
                             </page>
@@ -78,6 +84,7 @@
         <menuitem name="Danh mục mẫu sổ"
                   id="menu_list_sample"
                   action="list_sample_view"
+                  web_icon="list_samples,static/description/mau_sach.png"
                   sequence="1"/>
     </data>
 </odoo>
