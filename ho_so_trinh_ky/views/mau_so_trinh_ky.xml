@@ -10,7 +10,7 @@
                     <field name="sl_dang_ky"/>
                     <field name="sl_duyet_so"/>
                     <field name="sl_tu_choi"/>
-                    <field name="name"/>
+                    <field name="name_id"/>
                     <field name="loai_ap_dung_id"/>
                     <field name="tan_suat_id"/>
                     <field name="cap_hoc_id"/>
@@ -44,7 +44,7 @@
                                 <field name="sl_tu_choi"/>
                             </group>
                             <group>
-                                <field name="name"/>
+                                <field name="name_id"/>
                                 <field name="loai_ap_dung_id"/>
                                 <field name="tan_suat_id"/>
                                 <field name="cap_hoc_id"/>
