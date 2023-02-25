@@ -65,11 +65,11 @@ class ListSamples(models.Model):
     @api.onchange('applicable_type_id')
     def _onchange_applicable_type_id(self):
         for r in self:
-            if r.applicable_type_id.name in ('nội bộ sở', 'trường'):
+            if r.applicable_type_id.code in ('NBS', 'NBT'):
                 r.check1 = True
             else:
                 r.check1 = False
-            if r.applicable_type_id.name == "GVBM":  # khi chọn loại áp dụng GVMB thì hiện thêm chọn khối Khối
+            if r.applicable_type_id.code == "GVBM":  # khi chọn loại áp dụng GVMB thì hiện thêm chọn khối Khối
                 r.check2 = True
             else:
                 r.check2 = False
