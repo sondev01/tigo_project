@@ -13,5 +13,8 @@ class FrequencyModels(models.Model):
     def name_get(self):
         res = []
         for record in self:
-            res.append((record.id, "%s/%s" % (record.numbers, record.name)))
+            if record.numbers == 0:
+                res.append((record.id, record.name))
+            else:
+                res.append((record.id, "%s/%s" % (record.numbers, record.name)))
         return res
