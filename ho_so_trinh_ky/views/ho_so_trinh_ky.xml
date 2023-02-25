@@ -74,6 +74,6 @@
                   id="menu_hoso_trinhky"
                   parent="ho_so_trinh_ky.hoso_trinhky_menu"
                   action="hoso_trinhky_view"
-                  sequence="1"/>
+                  sequence="3"/>
     </data>
 </odoo>
