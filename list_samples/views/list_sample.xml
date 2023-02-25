@@ -31,17 +31,19 @@
                                     <field name="check" invisible="1"/>
                                     <field name="name"/>
                                     <field name="applicable_type_id"/>
+                                    <field name="check1" invisible="1"/>
+                                    <field name="check2" invisible="1"/>
                                     <field name="frequency_id"/>
                                     <field name="from_date" attrs="{'invisible': [('check','!=',True)]}"/>
                                     <field name="to_date" attrs="{'invisible': [('check','!=',True)]}"/>
                                     <field name="choose_signer"/>
                                     <field name="outsider_signer"/>
                                     <field name="check_done"/>
-                                    <field name="applied_learning_ids" widget="many2many_tags"/>
-                                    <field name="applied_subjects_ids" widget="many2many_tags"/>
+                                    <field name="applied_learning_ids" widget="many2many_tags" attrs="{'invisible': [('check2','!=',True)]}"/>
+                                    <field name="applied_subjects_ids" widget="many2many_tags" attrs="{'invisible': [('check2','!=',True)]}"/>
                                 </group>
                             </page>
-                            <page string="2.Phạm vi sử dụng">
+                            <page string="2.Phạm vi sử dụng" attrs="{'invisible': [('check1','!=',False)]}">
                                 <group>
                                     <field name="school_level_ids" widget="many2many_tags"/>
                                     <field name="education_ids" widget="many2many_tags"/>
