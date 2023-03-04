@@ -5,6 +5,7 @@
             <field name="model">applicable.type</field>
             <field name="arch" type="xml">
                 <tree editable="bottom">
+                    <field name="code"/>
                     <field name="name"/>
                 </tree>
             </field>

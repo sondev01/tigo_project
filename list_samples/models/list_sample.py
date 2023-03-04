@@ -50,3 +50,26 @@ class ListSamples(models.Model):
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)
     sign_book_ids = fields.One2many('sign.book', 'list_sample_id', string='đối tượng kí duyệt sổ')
+    check = fields.Boolean('Kiểm tra dữ liệu', invisible=True, defautl=False)
+    check1 = fields.Boolean('Kiểm tra dữ liệu', invisible=True)  # loại áp dụng khi chọn sở và trường ko hiện ts2
+    check2 = fields.Boolean('Kiểm tra dữ liệu', invisible=True)  # invisible để ẩn nút check
+
+    @api.onchange('frequency_id')
+    def _onchange_frequency_id(self):
+        for r in self:
+            if r.frequency_id.name == 'Tự định nghĩa':
+                r.check = True
+            else:
+                r.check = False
+
+    @api.onchange('applicable_type_id')
+    def _onchange_applicable_type_id(self):
+        for r in self:
+            if r.applicable_type_id.name in ('nội bộ sở', 'trường'):
+                r.check1 = True
+            else:
+                r.check1 = False
+            if r.applicable_type_id.name == "GVBM":  # khi chọn loại áp dụng GVMB thì hiện thêm chọn khối Khối
+                r.check2 = True
+            else:
+                r.check2 = False
