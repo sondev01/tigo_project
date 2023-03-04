@@ -7,7 +7,7 @@ class MauSoTrinhKy(models.Model):
     _name = 'mauso.trinhky'
     _description = 'Mẫu sổ trình ký'
 
-    name_id = fields.Many2one('list.sample',string="Tên sổ", required=True)
+    name_id = fields.Many2one('list.sample', string="Tên sổ", required=True)
     state = fields.Selection([
         ('draft', 'Nháp'),
         ('use', 'Sử dụng'),
@@ -21,6 +21,7 @@ class MauSoTrinhKy(models.Model):
     loai_ap_dung_id = fields.Many2one("applicable.type", string="Loại áp dụng", required=True)
     tan_suat_id = fields.Many2one('frequency.models', string='Tần suất', required=True)
     cap_hoc_id = fields.Many2one('school.level', string="Cấp học")
+    quyen_truy_cap_mau_so = fields.Boolean(string='QTC', compute='_compute_qtc')
 
     def see_more(self):
         self.ensure_one()
@@ -58,3 +59,7 @@ class MauSoTrinhKy(models.Model):
     def cancel(self):
         for r in self:
             r.state = 'cancel'
+
+    def _compute_qtc(self):
+        for r in self:
+            r.quyen_truy_cap_mau_so = self.user_has_groups('ho_so_trinh_ky.group_manager_ho_so_trinh_Ky')

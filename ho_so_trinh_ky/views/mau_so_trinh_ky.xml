@@ -27,7 +27,7 @@
                     <header>
                         <field name="state" widget="statusbar"/>
                         <button string="Sử dụng" class="oe_highlight" type="object" name="use"
-                                attrs="{'invisible': [('state','not in',['draft','block'])]}"/>
+                                attrs="{'invisible': ['|',('state','not in',['draft','block']),('quyen_truy_cap_mau_so','!=', True)]}"/>
                         <button string="Khóa" class="oe_highlight" type="object" name="block"
                                 attrs="{'invisible': [('state','not in',['draft','use','all'])]}"/>
                         <button string="Tất cả" class="oe_highlight" type="object" name="all"
@@ -39,6 +39,7 @@
                         <group>
                             <group>
                                 <field name="sl_chua_ky"/>
+                                <field name="quyen_truy_cap_mau_so"/>
                                 <field name="sl_dang_ky"/>
                                 <field name="sl_duyet_so"/>
                                 <field name="sl_tu_choi"/>
