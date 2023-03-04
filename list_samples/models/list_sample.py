@@ -24,11 +24,11 @@ class ListSamples(models.Model):
     applied_learning_ids = fields.Many2many('applied.learning',
                                             'list_sample_applied_learning_ref',
                                             'list_sample_id',
-                                            'applied_learning_id', string="Khối học áp dụng", required=True)
+                                            'applied_learning_id', string="Khối học áp dụng")
     applied_subjects_ids = fields.Many2many('applied.subjects',
                                             'list_sample_applied_subjects_ref',
                                             'list_sample_id',
-                                            'applied_subjects', string='Môn học áp dụng', required=True)
+                                            'applied_subjects', string='Môn học áp dụng')
     school_level_ids = fields.Many2many('school.level',
                                         'list_sample_school_level_ref',
                                         'list_sample_id',
