@@ -30,11 +30,11 @@
         'views/frequency_truong.xml',
         'views/applied_subjects.xml',
         'views/file.xml',
-        'views/object.xml',
         'views/school.xml',
         'views/education_truong.xml',
         'views/school_level_truong.xml',
         'views/applicable_type.xml',
+        'views/res_user.xml',
         'security/ir.model.access.csv',
     ],
 }

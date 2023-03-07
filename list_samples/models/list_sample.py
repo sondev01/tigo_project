@@ -45,7 +45,7 @@ class ListSamples(models.Model):
                                 'list_sample_file_ref',
                                 'list_sample_id',
                                 'file_id', string="File", required=True)
-    object_ids = fields.Many2many('object.models',
+    object_ids = fields.Many2many('res.users',
                                   'list_sample_object_ref',
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)

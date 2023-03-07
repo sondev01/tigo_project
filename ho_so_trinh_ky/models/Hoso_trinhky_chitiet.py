@@ -10,7 +10,7 @@ class HoSoTrinhKyChiTiet(models.Model):
 
     ho_ten = fields.Char(string="Họ và tên", required=True)
     thu_tu_ky = fields.Integer(string="Thứ tự ký", required=True)
-    loai_doi_tuong_ky_ids = fields.Many2one('object.models', string="Loại đối tượng ký", required=True)
+    loai_doi_tuong_ky_ids = fields.Many2one('res.users', string="Loại đối tượng ký", required=True)
     ky_dien_tu = fields.Boolean(string='Thực hiện ký điện tử')
     ban_hanh = fields.Boolean(string='Ban hành')
     ten_mau_so_id = fields.Many2one('list.sample', string='Tên mẫu sổ',required=True)
