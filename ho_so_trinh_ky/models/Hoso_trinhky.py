@@ -48,6 +48,15 @@ class HoSoTrinhKy(models.Model):
         for r in self:
             r.trang_thai_so = 'cancel'
             r.update_record()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Nhận Xét',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'popup.cmt',
+            'views': [(self.env.ref('ho_so_trinh_ky.popup_cmt_view').id, 'form')],
+            'target': 'new',
+        }
 
     @api.model
     def create(self, vals_list):
