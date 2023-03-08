@@ -46,7 +46,7 @@
                                 <field name="monhoc_apdung_id"/>
                             </group>
                             <group>
-                                <field name="nguoi_nop"/>
+                                <field name="nguoi_nop" widget="many2many_tags"/>
                                 <field name="ngay_nop"/>
                                 <field name="nhan_xet"/>
                                 <field name="da_ky_dien_tu"/>
