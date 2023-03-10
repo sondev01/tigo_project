@@ -8,3 +8,4 @@ from . import education_truong
 from . import school_level
 from . import applicable_type
 from . import res_user
+from . import tan_so_chi_tiet

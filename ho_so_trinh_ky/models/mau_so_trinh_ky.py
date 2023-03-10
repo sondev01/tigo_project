@@ -23,20 +23,3 @@ class MauSoTrinhKy(models.Model):
         action['domain'] = domain
         return action
 
-    def use(self):
-        for r in self:
-            r.state = 'use'
-
-    def block(self):
-        for r in self:
-            r.state = 'block'
-
-    def all(self):
-        for r in self:
-            r.state = 'all'
-
-    def cancel(self):
-        for r in self:
-            r.state = 'cancel'
-
-

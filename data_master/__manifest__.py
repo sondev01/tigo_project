@@ -26,6 +26,7 @@
 
     # always loaded
     'data': [
+        'views/tan_so_chi_tiet.xml',
         'views/applied_learning.xml',
         'views/frequency_truong.xml',
         'views/applied_subjects.xml',
