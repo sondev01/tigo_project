@@ -15,6 +15,7 @@ class ListSamples(models.Model):
         ('cancel', 'Từ chối')], string='Trạng thái', default='draft')
     name = fields.Char(string="Danh mục mẫu sổ", required=True)
     applicable_type_id = fields.Many2one('applicable.type', string='Loại áp dụng', required=True)
+    tan_so = fields.Integer(string='Tần suất')
     frequency_id = fields.Many2one('frequency.models', string="Tần suất")
     from_date = fields.Date(string='Từ ngày')
     to_date = fields.Date(string='Đến ngày')

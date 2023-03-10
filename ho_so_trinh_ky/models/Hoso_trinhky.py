@@ -67,7 +67,36 @@ class HoSoTrinhKy(models.Model):
                            INSERT INTO mauso_trinhky (name,sl_chua_ky,sl_dang_ky,sl_duyet_so,sl_tu_choi)
                            VALUES  ('{name_record}',1,0,0,0)
                            ''')
+        else:
+            self._cr.execute(f'''
+                                update mauso_trinhky mt 
+                                set sl_chua_ky = {mau_so.sl_chua_ky + 1} 
+                                where mt.name = '{name_record}' ''')
         return super(HoSoTrinhKy, self).create(vals_list)
+
+    def unlink(self):
+        for r in self:
+            record_number = self.env['mauso.trinhky'].search([('name', '=', r.mau_so_trinhky_id.name)])
+            self_record = self.search([('ten_hoso', '=', r.ten_hoso)])
+            if len(self_record) == 1:
+                self.env['mauso.trinhky'].search([('name', '=', r.mau_so_trinhky_id.name)]).unlink()
+            else:
+                if self.trang_thai_so == 'draft':
+                    self.update_record_unlink(record_number.sl_chua_ky, r.mau_so_trinhky_id.name)
+                elif self.trang_thai_so == 'doing':
+                    self.update_record_unlink(record_number.sl_dang_ky, r.mau_so_trinhky_id.name)
+                elif self.trang_thai_so == 'use':
+                    self.update_record_unlink(record_number.sl_duyet_so, r.mau_so_trinhky_id.name)
+                else:
+                    self.update_record_unlink(record_number.sl_tu_choi, r.mau_so_trinhky_id.name)
+
+        return super(HoSoTrinhKy, self).unlink()
+
+    def update_record_unlink(self, sl, name):
+        self._cr.execute(f'''
+                            update mauso_trinhky mt 
+                            set sl_chua_ky = {sl - 1} 
+                            where mt.name = '{name}' ''')
 
     def update_record(self):
         self._cr.execute(f'''

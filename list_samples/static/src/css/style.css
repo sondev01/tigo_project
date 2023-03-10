@@ -1,0 +1,25 @@
+.container_swap{
+
+width: 200px;
+
+}
+
+.div_left{
+
+width: 100px;
+
+float: left;
+
+text-align: center;
+
+}
+
+.div_right{
+
+width: 100px;
+
+float: left;
+
+text-align: center;
+
+}
