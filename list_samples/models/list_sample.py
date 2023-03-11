@@ -15,6 +15,7 @@ class ListSamples(models.Model):
         ('cancel', 'Từ chối')], string='Trạng thái', default='draft')
     name = fields.Char(string="Danh mục mẫu sổ", required=True)
     applicable_type_id = fields.Many2one('applicable.type', string='Loại áp dụng', required=True)
+    tan_so = fields.Integer(string='Tần suất')
     frequency_id = fields.Many2one('frequency.models', string="Tần suất")
     from_date = fields.Date(string='Từ ngày')
     to_date = fields.Date(string='Đến ngày')
@@ -45,7 +46,7 @@ class ListSamples(models.Model):
                                 'list_sample_file_ref',
                                 'list_sample_id',
                                 'file_id', string="File", required=True)
-    object_ids = fields.Many2many('object.models',
+    object_ids = fields.Many2many('res.users',
                                   'list_sample_object_ref',
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)

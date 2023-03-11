@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="tan_so_chi_tiet_view_tree" model="ir.ui.view">
+            <field name="name">Tần suất chi tiết</field>
+            <field name="model">tanso.chitiet</field>
+            <field name="arch" type="xml">
+                <tree string="Tần số chi tiết" editable="bottom">
+                    <field name="name"/>
+                    <field name="don_vi"/>
+                </tree>
+            </field>
+        </record>
+        <record id="tan_so_chi_tiet_action" model="ir.actions.act_window">
+            <field name="name">Tần suất chi tiết</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tanso.chitiet</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="tan_so_chi_tiet_menu"
+                  name="Tần suất chi tiết"
+                  parent="data_master.tan_suat_menu_root"
+                  action="tan_so_chi_tiet_action"
+                  sequence="2"/>
+    </data>
+</odoo>

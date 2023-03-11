@@ -27,6 +27,7 @@
 
     # always loaded
     'data': [
+        'wizard/popup_cmt.xml',
         'views/ho_so_trinh_ky.xml',
         'views/trinhky_chitiet.xml',
         'views/mau_so_trinh_ky.xml',
