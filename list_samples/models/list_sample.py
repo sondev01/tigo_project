@@ -46,7 +46,7 @@ class ListSamples(models.Model):
                                 'list_sample_file_ref',
                                 'list_sample_id',
                                 'file_id', string="File", required=True)
-    object_ids = fields.Many2many('res.users',
+    object_ids = fields.Many2many('res.groups',
                                   'list_sample_object_ref',
                                   'list_sample_id',
                                   'object_id', string="Đối tượng nộp", required=True)
@@ -74,3 +74,9 @@ class ListSamples(models.Model):
                 r.check2 = True
             else:
                 r.check2 = False
+
+    @api.model
+    def create(self, vals_list):
+        res = super(ListSamples, self).create(vals_list)
+        self.env['mauso.trinhky'].create({'name': vals_list['name']})
+        return res
