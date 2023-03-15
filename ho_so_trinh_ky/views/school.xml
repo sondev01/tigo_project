@@ -22,7 +22,7 @@
                 name="Trường học"
                 id="menu_school_models"
                 action="action_school_models"
-                parent="data_master.data_master_menu"
+                parent="ho_so_trinh_ky.data_master_menu"
                 sequence="3"/>
     </data>
 </odoo>

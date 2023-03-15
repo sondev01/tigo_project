@@ -20,7 +20,7 @@
 
         <menuitem id="tan_so_chi_tiet_menu"
                   name="Tần suất chi tiết"
-                  parent="data_master.tan_suat_menu_root"
+                  parent="ho_so_trinh_ky.tan_suat_menu_root"
                   action="tan_so_chi_tiet_action"
                   sequence="2"/>
     </data>

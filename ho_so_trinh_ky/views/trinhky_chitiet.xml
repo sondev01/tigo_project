@@ -21,10 +21,5 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
-        <menuitem name="Sổ trình ký"
-                  id="menu_trinhky_chitiet"
-                  action="trinhky_chitiet_view"
-                  parent="ho_so_trinh_ky.hoso_trinhky_menu"
-                  sequence="2"/>
     </data>
 </odoo>

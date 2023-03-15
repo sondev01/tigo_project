@@ -17,13 +17,13 @@
         </record>
         <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
         <menuitem id="tan_suat_menu_root"
-                  parent="data_master.data_master_menu"
+                  parent="ho_so_trinh_ky.data_master_menu"
                   name="Tần suất"
                   sequence="5"/>
         <menuitem name="Tần suất"
                   id="menu_frequency_models"
                   action="action_frequency_models"
-                  parent="data_master.tan_suat_menu_root"
+                  parent="ho_so_trinh_ky.tan_suat_menu_root"
                   sequence="1"/>
     </data>
 </odoo>
