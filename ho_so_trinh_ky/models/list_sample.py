@@ -46,10 +46,10 @@ class ListSamples(models.Model):
                                 'list_sample_file_ref',
                                 'list_sample_id',
                                 'file_id', string="File", required=True)
-    object_ids = fields.Many2many('res.users',
+    groups_ids = fields.Many2many('res.groups',
                                   'list_sample_object_ref',
                                   'list_sample_id',
-                                  'object_id', string="Đối tượng nộp", required=True)
+                                  'groups_id', string="Nhóm đối tượng nộp", required=True)
     sign_book_ids = fields.One2many('sign.book', 'list_sample_id', string='đối tượng kí duyệt sổ')
     check = fields.Boolean('Kiểm tra dữ liệu', invisible=True, defautl=False)
     check1 = fields.Boolean('Kiểm tra dữ liệu', invisible=True)  # loại áp dụng khi chọn sở và trường ko hiện ts2
@@ -74,3 +74,11 @@ class ListSamples(models.Model):
                 r.check2 = True
             else:
                 r.check2 = False
+
+    @api.model
+    def create(self, vals_list):
+        res = super(ListSamples, self).create(vals_list)
+        result = self.env['mauso.trinhky'].search_count([('name', '=', vals_list['name'])])
+        if result == 0:
+            self.env['mauso.trinhky'].create({'name': vals_list['name']})
+        return res

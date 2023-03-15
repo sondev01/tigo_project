@@ -24,10 +24,10 @@ class HoSoTrinhKy(models.Model):
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
     mau_so_trinhky_id = fields.Many2one('list.sample', string="Mẫu sổ trình ký", requred=True)
 
-    @api.onchange('mau_so_trinhky_id')
-    def onchange_mau_so_trinh_ki(self):
-        for r in self:
-            r.nguoi_nop = r.mau_so_trinhky_id.object_ids.ids
+    # @api.onchange('mau_so_trinhky_id')
+    # def onchange_mau_so_trinh_ki(self):
+    #     for r in self:
+    #         r.nguoi_nop = r.mau_so_trinhky_id.groups_ids.ids
 
     def use(self):
         for r in self:
@@ -54,3 +54,16 @@ class HoSoTrinhKy(models.Model):
             'views': [(self.env.ref('ho_so_trinh_ky.popup_cmt_view').id, 'form')],
             'target': 'new',
         }
+
+    @api.onchange('mau_so_trinhky_id')
+    def _onchange_nguoi_nop(self):
+        for r in self:
+            sql = '''
+                SELECT distinct (uid) FROM res_groups_users_rel WHERE gid in {}
+            '''.format(tuple(r.mau_so_trinhky_id.groups_ids.ids + [0, 0]))
+            self._cr.execute(sql)
+            recs = self._cr.dictfetchall()
+            list_id = []
+            for rec in recs:
+                list_id.append(rec['uid'])
+        return {'domain': {'nguoi_nop': [('id', 'in', list_id)]}}
