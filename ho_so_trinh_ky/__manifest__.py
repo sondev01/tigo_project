@@ -21,17 +21,32 @@
 
     # any module necessary for this one to work correctly
     'depends': [
-        'base',
-        'data_master'
+        'base'
     ],
 
     # always loaded
     'data': [
-        'wizard/popup_cmt.xml',
         'views/ho_so_trinh_ky.xml',
+        'wizard/popup_cmt.xml',
         'views/trinhky_chitiet.xml',
         'views/mau_so_trinh_ky.xml',
+
+        'views/applied_learning.xml',
+        'views/frequency_truong.xml',
+        'views/tan_so_chi_tiet.xml',
+        'views/applied_subjects.xml',
+        'views/file.xml',
+        'views/school.xml',
+        'views/education_truong.xml',
+        'views/school_level_truong.xml',
+        'views/applicable_type.xml',
+        'views/res_user.xml',
+
+        'views/list_sample.xml',
+        'views/sign_book.xml',
+        'security/ir.model.access.csv',
         'security/hstk_security.xml',
         'security/ir.model.access.csv',
+
     ],
 }

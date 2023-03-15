@@ -18,11 +18,12 @@
         </record>
         <menuitem name="Data Master"
                   id="data_master_menu"
-                  sequence="1"/>
+                  parent="ho_so_trinh_ky.hoso_trinhky_menu"
+                  sequence="4"/>
         <menuitem name="Khối áp dụng"
                   id="menu_applied_learning"
                   action="applied_learning_form"
-                  parent="data_master.data_master_menu"
+                  parent="ho_so_trinh_ky.data_master_menu"
                   sequence="1"/>
     </data>
 </odoo>

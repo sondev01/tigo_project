@@ -98,7 +98,7 @@
         <menuitem name="Danh mục mẫu sổ"
                   id="menu_list_sample"
                   action="list_sample_view"
-                  web_icon="list_samples,static/description/mau_sach.png"
+                  parent="ho_so_trinh_ky.hoso_trinhky_menu"
                   sequence="1"/>
     </data>
 </odoo>
