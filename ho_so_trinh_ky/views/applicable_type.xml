@@ -19,7 +19,7 @@
         <menuitem name="Loại áp dụng"
                   id="menu_applicable_type"
                   action="applicable_type_form"
-                  parent="data_master.data_master_menu"
+                  parent="ho_so_trinh_ky.data_master_menu"
                   sequence="9"/>
     </data>
 </odoo>

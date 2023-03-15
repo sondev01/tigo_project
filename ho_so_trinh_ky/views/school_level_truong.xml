@@ -19,7 +19,7 @@
         <menuitem name="Cấp học"
                   id="menu_school_level"
                   action="action_school_level"
-                  parent="data_master.data_master_menu"
+                  parent="ho_so_trinh_ky.data_master_menu"
                   sequence="2"/>
     </data>
 </odoo>

@@ -3,6 +3,17 @@ access_hoso_trinhky,hoso_trinhky,model_hoso_trinhky,base.group_user,1,1,1,1
 access_trinhky_chitiet,trinhky_chitiet,model_trinhky_chitiet,base.group_user,1,1,1,1
 access_mauso_trinhky,mauso_trinhky,model_mauso_trinhky,base.group_user,1,1,1,1
 access_popup_cmt,popup_cmt,model_popup_cmt,base.group_user,1,1,1,1
+access_frequency_models,frequency_models,model_frequency_models,base.group_user,1,1,1,1
+access_applied_subjects,applied_subjects,model_applied_subjects,base.group_user,1,1,1,1
+access_applied_learning,applied_learning,model_applied_learning,base.group_user,1,1,1,1
+access_education_models,education_models,model_education_models,base.group_user,1,1,1,1
+access_file_models,file_models,model_file_models,base.group_user,1,1,1,1
+access_school_models,school_models,model_school_models,base.group_user,1,1,1,1
+access_school_level,school_level,model_school_level,base.group_user,1,1,1,1
+access_applicable_type,applicable_type,model_applicable_type,base.group_user,1,1,1,1
+access_tanso_chitiet,tanso_chitiet,model_tanso_chitiet,base.group_user,1,1,1,1
+access_list_sample,list_sample,model_list_sample,base.group_user,1,1,1,1
+access_sign_book,sign_book,model_sign_book,base.group_user,1,1,1,1
 
 
 

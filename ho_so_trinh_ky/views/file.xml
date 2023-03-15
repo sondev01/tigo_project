@@ -20,7 +20,7 @@
                 name="Định dạng tệp"
                 id="menu_file_models"
                 action="action_file_models"
-                parent="data_master.data_master_menu"
+                parent="ho_so_trinh_ky.data_master_menu"
                 sequence="6"/>
     </data>
 </odoo>

@@ -62,7 +62,7 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
         </record>
-        <menuitem name="Hồ sơ trình ký"
+        <menuitem name="Quản lý mẫu sổ"
                   id="hoso_trinhky_menu"
                   web_icon="ho_so_trinh_ky,static/description/sach.png"
                   sequence="1"/>
