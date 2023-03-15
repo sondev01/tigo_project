@@ -5,7 +5,7 @@
             <field name="model">mauso.trinhky</field>
             <field name="arch" type="xml">
                 <tree string="Mẫu sổ trình ký" create="false" edit="false" delete="false">
-                    <button name="see_more" string="Xem thêm" type="object" class="btn-primary"/>
+                    <button name="see_more" string="Xem" type="object" class="btn-primary"/>
                     <field name="sl_chua_ky"/>
                     <field name="sl_dang_ky"/>
                     <field name="sl_duyet_so"/>

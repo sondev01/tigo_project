@@ -8,18 +8,36 @@ class MauSoTrinhKy(models.Model):
     _description = 'Mẫu sổ trình ký'
 
     name = fields.Char(string="Tên sổ", required=True)
-    sl_chua_ky = fields.Integer(string="Số lượng chưa trình ký", readonly=True, default=0)
-    sl_dang_ky = fields.Integer(string="Số lượng đang trình ký", readonly=True, default=0)
-    sl_duyet_so = fields.Integer(string="Số lượng duyệt kí sổ", readonly=True, default=0)
-    sl_tu_choi = fields.Integer(string="Số lượng từ chối", readonly=True, default=0)
+    sl_chua_ky = fields.Integer(string="Số lượng chưa trình ký", readonly=True, default=0, compute='_compute_data')
+    sl_dang_ky = fields.Integer(string="Số lượng đang trình ký", readonly=True, default=0, compute='_compute_data')
+    sl_duyet_so = fields.Integer(string="Số lượng duyệt kí sổ", readonly=True, default=0, compute='_compute_data')
+    sl_tu_choi = fields.Integer(string="Số lượng từ chối", readonly=True, default=0, compute='_compute_data')
 
     def see_more(self):
-        self.ensure_one()
-        return self._get_action('ho_so_trinh_ky.hoso_trinhky_view')
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Hồ sơ trình kí',
+            'res_model': 'hoso.trinhky',
+            'views': [(self.env.ref('ho_so_trinh_ky.hoso_trinhky_tree').id, 'tree')],
+            'target': 'new',
+        }
 
-    def _get_action(self, action_xmlid):
-        action = self.env["ir.actions.actions"]._for_xml_id(action_xmlid)
-        domain = [('mau_so_trinhky_id.name', '=', self.name)]
-        action['domain'] = domain
-        return action
+    #     self.ensure_one()
+    #     return self._get_action('ho_so_trinh_ky.hoso_trinhky_view')
+    #
+    # def _get_action(self, action_xmlid):
+    #     action = self.env["ir.actions.actions"]._for_xml_id(action_xmlid)
+    #     domain = [('mau_so_trinhky_id.name', '=', self.name)]
+    #     action['domain'] = domain
+    #     return action
 
+    def _compute_data(self):
+        for r in self:
+            r.sl_chua_ky = self.env['hoso.trinhky'].search_count(
+                [('trang_thai_so', '=', 'draft'), ('mau_so_trinhky_id.name', '=', r.name)])
+            r.sl_dang_ky = self.env['hoso.trinhky'].search_count(
+                [('trang_thai_so', '=', 'doing'), ('mau_so_trinhky_id.name', '=', r.name)])
+            r.sl_duyet_so = self.env['hoso.trinhky'].search_count(
+                [('trang_thai_so', '=', 'use'), ('mau_so_trinhky_id.name', '=', r.name)])
+            r.sl_tu_choi = self.env['hoso.trinhky'].search_count(
+                [('trang_thai_so', '=', 'cancel'), ('mau_so_trinhky_id.name', '=', r.name)])
