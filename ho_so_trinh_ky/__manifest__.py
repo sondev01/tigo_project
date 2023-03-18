@@ -44,6 +44,7 @@
 
         'views/list_sample.xml',
         'views/sign_book.xml',
+        'views/so_ky_duyet.xml',
         'security/ir.model.access.csv',
         'security/hstk_security.xml',
         'security/ir.model.access.csv',
