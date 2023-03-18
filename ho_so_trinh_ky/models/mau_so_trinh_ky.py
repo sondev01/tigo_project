@@ -18,18 +18,9 @@ class MauSoTrinhKy(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'Hồ sơ trình kí',
             'res_model': 'hoso.trinhky',
-            'views': [(self.env.ref('ho_so_trinh_ky.hoso_trinhky_tree').id, 'tree')],
-            'target': 'new',
+            'view_mode': 'tree,form',
+            'target': 'current',
         }
-
-    #     self.ensure_one()
-    #     return self._get_action('ho_so_trinh_ky.hoso_trinhky_view')
-    #
-    # def _get_action(self, action_xmlid):
-    #     action = self.env["ir.actions.actions"]._for_xml_id(action_xmlid)
-    #     domain = [('mau_so_trinhky_id.name', '=', self.name)]
-    #     action['domain'] = domain
-    #     return action
 
     def _compute_data(self):
         for r in self:

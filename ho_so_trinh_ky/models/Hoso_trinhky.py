@@ -22,12 +22,8 @@ class HoSoTrinhKy(models.Model):
                                  required=True)
     nhan_xet = fields.Char(string='Nhận xét')
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
-    mau_so_trinhky_id = fields.Many2one('list.sample', string="Mẫu sổ trình ký", requred=True)
-
-    # @api.onchange('mau_so_trinhky_id')
-    # def onchange_mau_so_trinh_ki(self):
-    #     for r in self:
-    #         r.nguoi_nop = r.mau_so_trinhky_id.groups_ids.ids
+    mau_so_trinhky_id = fields.Many2one('list.sample', string="Mẫu sổ trình ký", requred=True, compute='_compute_mstk',
+                                        store=True, readonly=False)
 
     def use(self):
         for r in self:
@@ -64,6 +60,26 @@ class HoSoTrinhKy(models.Model):
             self._cr.execute(sql)
             recs = self._cr.dictfetchall()
             list_id = []
+            a = self.env.user.id
+            print(a)
             for rec in recs:
                 list_id.append(rec['uid'])
         return {'domain': {'nguoi_nop': [('id', 'in', list_id)]}}
+
+    def _compute_mstk(self):
+        sql = '''
+                SELECT DISTINCT(ls.id) FROM list_sample ls LEFT JOIN list_sample_object_ref lsr on ls.id = lsr.list_sample_id
+                WHERE lsr.groups_id in (SELECT
+                    rg.gid 
+                FROM
+                    res_users ru
+                    LEFT JOIN res_groups_users_rel rg ON ru.ID = rg.uid
+                WHERE
+                    ru.ID = {})
+            '''.format(self.env.user.id)
+        self._cr.execute(sql)
+        recs = self._cr.dictfetchall()
+        list_id = []
+        for rec in recs:
+            list_id.append(rec['id'])
+        return {'domain': {'mau_so_trinhky_id': [('id', 'in', list_id)]}}
