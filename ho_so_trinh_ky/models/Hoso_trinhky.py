@@ -24,6 +24,42 @@ class HoSoTrinhKy(models.Model):
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
     mau_so_trinhky_id = fields.Many2one('list.sample', string="Mẫu sổ trình ký", requred=True, compute='_compute_mstk',
                                         store=True, readonly=False)
+    check_user = fields.Boolean(string="Kiểm tra user có nằm trong group không", compute="check_user_in_group",
+                                default=False)
+
+    def check_user_in_group(self):
+        for r in self:
+            sql = '''
+            SELECT
+                rgr.gid 
+            FROM
+                res_users ru
+                LEFT JOIN res_groups_users_rel rgr ON ru.ID = rgr.uid
+            where ru.id = {}'''.format(self.env.user.id)
+            self._cr.execute(sql)
+            recs = self._cr.dictfetchall()
+
+            sql1 = '''
+                    SELECT
+                        sb.object_type_id 
+                    FROM
+                        hoso_trinhky ht
+                        LEFT JOIN list_sample ls ON ls.ID = ht.mau_so_trinhky_id
+                        LEFT JOIN sign_book sb ON sb.list_sample_id = ls.ID
+                    WHERE ht.id = {}
+            '''.format(r.id)
+            self._cr.execute(sql1)
+            recs1 = self._cr.dictfetchall()
+            list_id = [rec['gid'] for rec in recs]
+            if recs1:
+                for rec in recs1:
+                    if rec['object_type_id'] in list_id:
+                        r.check_user = True
+                        break
+                    else:
+                        r.check_user = False
+            else:
+                r.check_user = False
 
     def use(self):
         for r in self:
@@ -73,7 +109,7 @@ class HoSoTrinhKy(models.Model):
                     rg.gid 
                 FROM
                     res_users ru
-                    LEFT JOIN res_groups_users_rel rg ON ru.ID = rg.uid
+                        LEFT JOIN res_groups_users_rel rg ON ru.ID = rg.uid
                 WHERE
                     ru.ID = {})
             '''.format(self.env.user.id)
