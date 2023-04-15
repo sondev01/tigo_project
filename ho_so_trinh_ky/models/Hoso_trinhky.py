@@ -14,12 +14,11 @@ class HoSoTrinhKy(models.Model):
         ('doing', 'Đang ký Sổ'),
         ('use', 'Duyệt ký Sổ'),
         ('cancel', 'Từ chối ký Sổ')], string='Trạng thái', default='draft')
-    file = fields.Binary(string='File Nộp', required=True)
+    file = fields.Binary(string='File Nộp')
     khoihoc_apdung_id = fields.Many2one('applied.learning', string='Khối học')
     monhoc_apdung_id = fields.Many2one('applied.subjects', string='Môn học')
-    ngay_nop = fields.Date(string='Ngày nộp', required=True)
-    nguoi_nop = fields.Many2many('res.users', 'ho_so_res_user_ref', 'ho_so_id', 'res_user_id', string='Người nộp',
-                                 required=True)
+    ngay_nop = fields.Date(string='Ngày nộp')
+    nguoi_nop = fields.Many2many('res.users', 'ho_so_res_user_ref', 'ho_so_id', 'res_user_id', string='Người nộp')
     nhan_xet = fields.Char(string='Nhận xét')
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
     mau_so_trinhky_id = fields.Many2one('list.sample', string="Mẫu sổ trình ký", requred=True, compute='_compute_mstk',

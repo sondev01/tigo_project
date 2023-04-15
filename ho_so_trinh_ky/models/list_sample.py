@@ -13,8 +13,8 @@ class ListSamples(models.Model):
         ('block', 'Khóa'),
         ('all', 'Tất cả'),
         ('cancel', 'Từ chối')], string='Trạng thái', default='draft')
-    name = fields.Char(string="Danh mục mẫu sổ", required=True)
-    applicable_type_id = fields.Many2one('applicable.type', string='Loại áp dụng', required=True)
+    name = fields.Char(string="Danh mục mẫu sổ")
+    applicable_type_id = fields.Many2one('applicable.type', string='Loại áp dụng')
     tan_so = fields.Integer(string='Tần suất')
     frequency_id = fields.Many2one('frequency.models', string="Tần suất")
     from_date = fields.Date(string='Từ ngày')
@@ -33,23 +33,23 @@ class ListSamples(models.Model):
     school_level_ids = fields.Many2many('school.level',
                                         'list_sample_school_level_ref',
                                         'list_sample_id',
-                                        'school_level_id', string="Cấp học", required=True)
+                                        'school_level_id', string="Cấp học")
     education_ids = fields.Many2many('education.models',
                                      'list_sample_education_models_ref',
                                      'list_sample_id',
-                                     'education_id', string="Phòng giáo dục", required=True)
+                                     'education_id', string="Phòng giáo dục")
     school_ids = fields.Many2many('school.models',
                                   'list_sample_school_ref',
                                   'list_sample_id',
-                                  'school_id', string="Trường", required=True)
+                                  'school_id', string="Trường")
     file_ids = fields.Many2many('file.models',
                                 'list_sample_file_ref',
                                 'list_sample_id',
-                                'file_id', string="File", required=True)
+                                'file_id', string="File")
     groups_ids = fields.Many2many('res.groups',
                                   'list_sample_object_ref',
                                   'list_sample_id',
-                                  'groups_id', string="Nhóm đối tượng nộp", required=True)
+                                  'groups_id', string="Nhóm đối tượng nộp")
     sign_book_ids = fields.One2many('sign.book', 'list_sample_id', string='đối tượng kí duyệt sổ')
     check = fields.Boolean('Kiểm tra dữ liệu', invisible=True, defautl=False)
     check1 = fields.Boolean('Kiểm tra dữ liệu', invisible=True)  # loại áp dụng khi chọn sở và trường ko hiện ts2
