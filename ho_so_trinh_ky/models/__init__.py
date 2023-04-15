@@ -13,3 +13,4 @@ from . import res_user
 from . import tan_so_chi_tiet
 from . import list_sample
 from . import sign_book
+from . import so_ky_duyet

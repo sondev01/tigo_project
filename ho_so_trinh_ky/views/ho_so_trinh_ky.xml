@@ -30,11 +30,9 @@
                         <button string="Ký duyệt" class="oe_highlight" type="object" name="doing"
                                 attrs="{'invisible': [('trang_thai_so','!=','draft')]}"/>
                         <button string="Xác nhận" class="oe_highlight" type="object" name="use"
-                                attrs="{'invisible': [('trang_thai_so','!=','doing')]}"/>
+                                attrs="{'invisible': ['|',('trang_thai_so','!=','doing'),('check_user','=',False)]}"/>
                         <button string="Từ chối" class="oe_highlight" type="object" name="cancel"
-                                attrs="{'invisible': [('trang_thai_so','!=','doing')]}"/>
-                        <button string="Chuyển về nháp" class="oe_highlight" type="object" name="draft"
-                                attrs="{'invisible': [('trang_thai_so','=','draft')]}"/>
+                                attrs="{'invisible': ['|',('trang_thai_so','!=','doing'),('check_user','=',False)]}"/>
                     </header>
                     <sheet>
                         <group>
@@ -43,6 +41,7 @@
                                 <field name="mau_so_trinhky_id"/>
                                 <field name="file" widget="binary"/>
                                 <field name="khoihoc_apdung_id"/>
+                                <field name="check_user" invisible="1"/>
                                 <field name="monhoc_apdung_id"/>
                             </group>
                             <group>

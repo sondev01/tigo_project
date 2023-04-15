@@ -14,6 +14,7 @@ access_applicable_type,applicable_type,model_applicable_type,base.group_user,1,1
 access_tanso_chitiet,tanso_chitiet,model_tanso_chitiet,base.group_user,1,1,1,1
 access_list_sample,list_sample,model_list_sample,base.group_user,1,1,1,1
 access_sign_book,sign_book,model_sign_book,base.group_user,1,1,1,1
+access_so_ky,so_ky,model_so_ky,base.group_user,1,1,1,1
 
 
 
