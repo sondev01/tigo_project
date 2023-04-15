@@ -21,7 +21,7 @@
 
     # any module necessary for this one to work correctly
     'depends': [
-        'base'
+        'base', 'website'
     ],
 
     # always loaded
@@ -50,4 +50,8 @@
         'security/ir.model.access.csv',
 
     ],
+    'controllers': [
+        'controllers/customer_api_controller.py'
+    ],
 }
+
