@@ -64,13 +64,13 @@
                             </page>
                             <page string="3.Định dạng tệp nộp">
                                 <group>
-                                    <field name="file_ids" widget="many2many_tags"/>
+                                    <field name="file_ids" widget="many2many_checkboxes"/>
 
                                 </group>
                             </page>
                             <page string="4.Đối tượng nộp">
                                 <group>
-                                    <field name="groups_ids" widget="many2many_tags"/>
+                                    <field name="groups_ids" widget="many2many_checkboxes"/>
                                 </group>
                             </page>
                             <page string="5.Đối tượng kí duyệt sổ" attrs="{'invisible': [('choose_signer','=',False)]}">
