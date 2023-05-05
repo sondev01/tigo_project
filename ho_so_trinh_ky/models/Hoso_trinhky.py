@@ -18,7 +18,9 @@ class HoSoTrinhKy(models.Model):
     khoihoc_apdung_id = fields.Many2one('applied.learning', string='Khối học')
     monhoc_apdung_id = fields.Many2one('applied.subjects', string='Môn học')
     ngay_nop = fields.Date(string='Ngày nộp')
-    nguoi_nop = fields.Many2many('res.users', 'ho_so_res_user_ref', 'ho_so_id', 'res_user_id', string='Người nộp')
+    nguoi_nop = fields.Many2many('res.users', 'ho_so_res_user_ref', 'ho_so_id', 'res_user_id', string='Người nộp',
+                                 store=True, readonly=False, domain="[('id', 'in', nguoi_nop_2)]")
+    nguoi_nop_2 = fields.Many2many('res.users', string='Người Nộp', compute='_compute_domain')
     nhan_xet = fields.Char(string='Nhận xét')
     da_ky_dien_tu = fields.Boolean(string=' Đã ký điện tử')
     mau_so_trinhky_id = fields.Many2one('list.sample', string="Mẫu sổ trình ký", requred=True, compute='_compute_mstk',
@@ -86,8 +88,23 @@ class HoSoTrinhKy(models.Model):
             'target': 'new',
         }
 
+    # @api.onchange('mau_so_trinhky_id')
+    # def _onchange_nguoi_nop(self):
+    #     for r in self:
+    #         sql = '''
+    #             SELECT distinct (uid) FROM res_groups_users_rel WHERE gid in {}
+    #         '''.format(tuple(r.mau_so_trinhky_id.groups_ids.ids + [0, 0]))
+    #         self._cr.execute(sql)
+    #         recs = self._cr.dictfetchall()
+    #         list_id = []
+    #         a = self.env.user.id
+    #         print(a)
+    #         for rec in recs:
+    #             list_id.append(rec['uid'])
+    #     return {'domain': {'nguoi_nop': [('id', 'in', list_id)]}}
+
     @api.onchange('mau_so_trinhky_id')
-    def _onchange_nguoi_nop(self):
+    def _compute_domain(self):
         for r in self:
             sql = '''
                 SELECT distinct (uid) FROM res_groups_users_rel WHERE gid in {}
@@ -95,11 +112,10 @@ class HoSoTrinhKy(models.Model):
             self._cr.execute(sql)
             recs = self._cr.dictfetchall()
             list_id = []
-            a = self.env.user.id
-            print(a)
             for rec in recs:
                 list_id.append(rec['uid'])
-        return {'domain': {'nguoi_nop': [('id', 'in', list_id)]}}
+            data_records = self.env['res.users'].search([('id', 'in', list_id)])
+            r.nguoi_nop_2 = data_records
 
     def _compute_mstk(self):
         sql = '''

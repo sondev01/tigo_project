@@ -43,6 +43,7 @@
                                 <field name="khoihoc_apdung_id"/>
                                 <field name="check_user" invisible="1"/>
                                 <field name="monhoc_apdung_id"/>
+                                <field name="nguoi_nop_2" invisible="1"/>
                             </group>
                             <group>
                                 <field name="nguoi_nop" widget="many2many_tags"/>
